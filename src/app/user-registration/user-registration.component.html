@@ -1,0 +1,107 @@
+<div>
+  <div>
+    <p>
+      <mat-toolbar color="primary">
+      <img src = "/assets/image/banking.jpg" alt="" style="height:60px; width:100px" class="center"> &nbsp;&nbsp;
+      <span> Digital Book App</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     
+      <img src = "/assets/image/login.jpg" alt="" style="height:50px; width:80px" class="margin-left">
+      <button mat-raised-button color="primary" (click)="signUp()">Logout</button> 
+      
+    </mat-toolbar>
+  </p>
+</div>
+
+<div>
+    <Form [formGroup]="registrationForm">
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Saluatation</mat-label>
+            <mat-select placeholder="saluatation" formControlName="saluatation">
+                <mat-option value="Mr">Mr</mat-option>
+                <mat-option value="Dr">Dr</mat-option>
+                <mat-option value="Prof">Prof</mat-option>
+                <mat-option value="Mrs">Mrs</mat-option>
+                <mat-option value="Miss">Miss</mat-option>
+                <mat-option value="Mx">Mx</mat-option>
+            </mat-select>
+            
+          </mat-form-field>
+       
+        <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput type="text" formControlName="firstname">
+          </mat-form-field>
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Middle Name</mat-label>
+            <input matInput type="text" formControlName="middlename">
+          </mat-form-field>
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput type="text" formControlName="lastname">
+          </mat-form-field>
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>User Name</mat-label>
+            <input matInput type="text" formControlName="username">
+          </mat-form-field>
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>User Email</mat-label>
+            <input matInput type="text" formControlName="useremail">
+          </mat-form-field>
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>New Password</mat-label>
+            <input matInput type="password" formControlName="password">
+          </mat-form-field>
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Mobile Number</mat-label>
+            <input matInput type="number" formControlName="mobilenumber">
+          </mat-form-field>
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Address</mat-label>
+            <input matInput type="text" formControlName="address">
+          </mat-form-field>
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>City</mat-label>
+            <input matInput type="text" formControlName="city">
+          </mat-form-field>
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Postal Code</mat-label>
+            <input matInput type="number" formControlName="postalcode">
+          </mat-form-field>
+          <!-- <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>User Status</mat-label>
+            <input matInput type="number" formControlName="status">
+          </mat-form-field> -->
+
+          <mat-form-field appearance="outline">
+            <mat-label>User Status</mat-label>
+            <mat-select placeholder="status" formControlName="status">
+                <mat-option value="Active">Active</mat-option>
+                <mat-option value="InActive">InActive</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>User Role</mat-label>
+            <mat-select placeholder="role" formControlName="role">
+                <mat-option value="Customer">Customer</mat-option>
+                <mat-option value="Employee">Employee</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div mat-dialog-action [align]="'end'">
+            <button mat-raised-button color="Warn" mat-dialog-close>Exit</button>
+            <button style="margin-left:8px;" mat-raised-button color="primary" (click)="addRegistered()">Save</button>
+          </div>
+    </Form>
+</div>
+
+
