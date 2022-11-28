@@ -53,4 +53,16 @@ export class AddcustomerComponent implements OnInit {
     this.router.navigate(['/customerlist']);
   }
 
+  getDashboard(){
+    this.router.navigate(['/dashboard']);
+  }
+
+  getCustomers() {
+    this.router.navigate(['/customerlist']);
+  }
+
+  logout(){
+    this.router.navigate(['/login']);
+  }
+
 }
