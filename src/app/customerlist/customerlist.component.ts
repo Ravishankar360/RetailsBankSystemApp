@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserLoginServiceService } from '../user-login-service.service';
 import { Router } from '@angular/router';
 import { User } from '../user';
+import { Customer } from '../customer';
+import { CustomerServiceService } from '../customer-service.service';
 
 @Component({
   selector: 'app-customerlist',
@@ -10,10 +12,12 @@ import { User } from '../user';
 })
 export class CustomerlistComponent implements OnInit {
   users: Array<User> = [];
-  constructor( private userloginService:UserLoginServiceService,private router:Router) { }
+  customers: Array<Customer> =[];
+  constructor( private userloginService:UserLoginServiceService,private customerService:CustomerServiceService
+    ,private router:Router) { }
 
   ngOnInit(): void {
-    this.getUsers();
+    this.getCustomers();
   }
   getUsers() {
     this.userloginService.getUserListFromRemote().subscribe(
@@ -28,7 +32,36 @@ export class CustomerlistComponent implements OnInit {
 
   }
 
+  getCustomers() {
+    this.customerService.getCustomerListFromRemote().subscribe(
+      data=> this.customers=data ,error=>console.log("Exception occurred 1"))
+  }isEmpty1()
+  {
+    if (this.customers == null)
+    {
+      return true;
+    }
+    else { return false; }
+
+  }
+
   signUp(){
+    this.router.navigate(['/login']);
+  }
+
+  addCustomer(){
+    this.router.navigate(['/addCustomer']);
+  }
+
+  getDashboard(){
+    this.router.navigate(['/dashboard']);
+  }
+
+  getCustomersList() {
+    this.router.navigate(['/customerlist']);
+  }
+
+  logout(){
     this.router.navigate(['/login']);
   }
 

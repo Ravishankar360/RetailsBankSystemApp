@@ -31,6 +31,10 @@ export class UserLoginServiceService {
     return this.httpClient.get<any>('http://localhost:8085/viewAllUsers');
   }
 
+  getCustomerListFromRemote(): Observable<any>{
+    return this.httpClient.get<any>("http://localhost:8086/viewAllCustomers");
+  }
+
   // deleteBookById(bid: number): Observable<any> {
   //   return this.httpClient.delete<any>('http://localhost:8083/book/deleteBook/' + bid);
   // }

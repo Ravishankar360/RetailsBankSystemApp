@@ -37,7 +37,7 @@ export class UserLoginComponent implements OnInit {
       const headers = new HttpHeaders().set('Authorization', `Bearer ${this.reposne.token}`);
       console.log(headers);
       alert("Login Successfully !!!");
-      this.router.navigate(["/customerlist"]);
+      this.router.navigate(["/dashboard"]);
     },error=>alert("Please enter correct username and password"));
   }
 
@@ -49,7 +49,7 @@ export class UserLoginComponent implements OnInit {
       const headers = new HttpHeaders().set('Authorization', `Bearer ${this.reposne.token}`);
       console.log(headers);
       alert("Login Successfully !!!");
-      this.router.navigate(["/customerlist"]);
+      this.router.navigate(["/dashboard"]);
     },error=>alert("Please enter correct username and password"));
   }
   

@@ -1,6 +1,23 @@
 <div>
     <p>
       <mat-toolbar color="primary">
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+              <mat-icon>dialpad</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="getDashboard()">
+                <!-- <mat-icon>more_vert</mat-icon> -->
+                <span>Dashboard</span>
+              </button>
+              <button mat-menu-item (click)="getCustomers()">
+                <!-- <mat-icon>voicemail</mat-icon> -->
+                <span>Customer Info</span>
+              </button>
+              <button mat-menu-item (click)="logout()">
+                <mat-icon>logout</mat-icon>
+                <span>Logout</span>
+              </button>
+            </mat-menu>
       <img src = "/assets/image/banking.jpg" alt="" style="height:60px; width:100px" class="center"> &nbsp;&nbsp;
       <span> Retails Bank  System</span>
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -22,32 +39,32 @@
       <table class="table" cellpadding="10">
         <thead class="thead-dark">
         <tr>
-          <th scope="col">User Id</th>
           <th scope="col">Saluatation</th>
           <th scope="col">First Name</th>
           <th scope="col">Last Name</th>
           <th scope="col">User Name</th>
-          <th scope="col">User Email</th>
+          <th scope="col">User DOB</th>
           <th scope="col">City</th>
           <th scope="col">User Status</th>
           <th scope="col">Mobile No.</th>
+          <th scope="col">Pan Number</th>
      
         </tr>
         </thead>
         <tbody>
-        <tr *ngIf="users.length==0">
+        <tr *ngIf="customers.length==0">
           <td colspan="7" style="text-align: center"><h2>There are no User yet</h2></td>
         </tr>
-        <tr *ngFor="let user of users">
-          <td >{{user.userid}}</td>
-          <td>{{user.saluatation}}</td>
-          <td>{{user.firstname}}</td>
-          <td>{{user.lastname}}</td>
-          <td>{{user.username}}</td>
-          <td >{{user.useremail}}</td>
-          <td>{{user.city}}</td>
-          <td>{{user.status}}</td>
-          <td >{{user.mobilenumber}}</td>
+        <tr *ngFor="let customer of customers">
+          <td>{{customer.saluatation}}</td>
+          <td>{{customer.firstname}}</td>
+          <td>{{customer.lastname}}</td>
+          <td>{{customer.username}}</td>
+          <td >{{customer.dateOfBirth}}</td>
+          <td>{{customer.city}}</td>
+          <td>{{customer.status}}</td>
+          <td >{{customer.mobilenumber}}</td>
+          <td >{{customer.pan}}</td>
           <td>
             <!-- <button type="button" class="btn btn-primary" (click)="goToUpdateBook(book.bid)">Edit</button>&nbsp; -->
             <!--  <button type="button" class="btn btn-secondary" (click)="goToViewBook(book.id)">View</button>&nbsp; -->
@@ -56,5 +73,6 @@
         </tr>
       
         </tbody>
+        <button type="button" class="btn btn-success" (click)="addCustomer()">Add Customer</button>
       </table>
   </div>

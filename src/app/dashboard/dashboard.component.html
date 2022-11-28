@@ -1,0 +1,70 @@
+
+<div>
+    <p>
+      <mat-toolbar color="primary">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>dialpad</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="getDashboard()">
+              <!-- <mat-icon>more_vert</mat-icon> -->
+              <span>Dashboard</span>
+            </button>
+            <button mat-menu-item (click)="getCustomers()">
+              <!-- <mat-icon>voicemail</mat-icon> -->
+              <span>Customer Info</span>
+            </button>
+            <button mat-menu-item (click)="logout()">
+              <mat-icon>logout</mat-icon>
+              <span>Logout</span>
+            </button>
+          </mat-menu>
+      <img src = "/assets/image/banking.jpg" alt="" style="height:60px; width:100px" class="center"> &nbsp;&nbsp;
+      <span> Retails Bank System</span>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       
+      
+       <img src = "/assets/image/login.jpg" alt="" style="height:50px; width:80px" class="margin-left"><br>
+       <button mat-raised-button color="primary" (click)="signUp()">Logout</button> 
+      
+    </mat-toolbar>
+  </p>
+
+<div id="wrapper">
+    <nav
+      class="
+        navbar navbar-dark
+        align-items-start
+        sidebar sidebar-dark
+        accordion
+        bg-gradient-primary
+        p-0
+      " >
+    </nav>
+    <div class="d-flex flex-column" id="content-wrapper">
+      <div id="content">
+        <br />
+        <br />
+        <div class="container-fluid">
+          <h3 class="text-dark mb-4">Employee Dashboard</h3>
+          <div class="card shadow">
+            <div class="card-body">
+              <p>
+                Welcome back, Employee! <br />
+                <br />Here you will be able to create new customers, their
+                respective accounts and retrieve details of the existing
+                customers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

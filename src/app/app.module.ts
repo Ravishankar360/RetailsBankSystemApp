@@ -24,6 +24,8 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerlistComponent } from './customerlist/customerlist.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { AddcustomerComponent } from './addcustomer/addcustomer.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     UserRegistrationComponent,
     UserLoginComponent,
     CustomerlistComponent,
+    AddcustomerComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
