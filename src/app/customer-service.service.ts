@@ -18,7 +18,18 @@ export class CustomerServiceService {
     return this.httpClient.post("http://localhost:8086/createCustomer",customer);
   }
 
+
   getCustomerListFromRemote(): Observable<any>{
     return this.httpClient.get<any>("http://localhost:8086/viewAllCustomers");
+  }
+
+  featchCustomerByIdFromRemote(customerid: number) : Observable<any>{
+    //alert("CustomerService CustomerID:-"+customerid);
+    return this.httpClient.get<any>('http://localhost:8086/viewAllCustomerById/' + customerid);
+  }
+
+  getByEmail(customer:Customer):Observable<Object>{
+    console.log(customer);
+    return this.httpClient.post("http://localhost:8086/getFindByEmail",customer);
   }
 }

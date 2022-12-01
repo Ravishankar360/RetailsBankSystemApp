@@ -35,6 +35,10 @@ export class UserLoginServiceService {
     return this.httpClient.get<any>("http://localhost:8086/viewAllCustomers");
   }
 
+  getUserByName(user:User) : Observable<object>{
+    return this.httpClient.post('http://localhost:8085/getByUserEmail', user)
+  }
+
   // deleteBookById(bid: number): Observable<any> {
   //   return this.httpClient.delete<any>('http://localhost:8083/book/deleteBook/' + bid);
   // }

@@ -6,12 +6,16 @@
             </button>
             <mat-menu #menu="matMenu">
               <button mat-menu-item (click)="getDashboard()">
-                <!-- <mat-icon>more_vert</mat-icon> -->
+                <mat-icon>Dashboard</mat-icon>
                 <span>Dashboard</span>
               </button>
               <button mat-menu-item (click)="getCustomers()">
-                <!-- <mat-icon>voicemail</mat-icon> -->
+                <mat-icon>Customer</mat-icon>
                 <span>Customer Info</span>
+              </button>
+              <button mat-menu-item (click)="addCustomer()">
+                <mat-icon>New</mat-icon>
+                <span>New Customer Account</span>
               </button>
               <button mat-menu-item (click)="logout()">
                 <mat-icon>logout</mat-icon>
@@ -19,15 +23,14 @@
               </button>
             </mat-menu>
       <img src = "/assets/image/banking.jpg" alt="" style="height:60px; width:100px" class="center"> &nbsp;&nbsp;
-      <span> Retails Bank  System</span>
+      <span> Retails Bank System</span>
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       
        <img src = "/assets/image/login.jpg" alt="" style="height:50px; width:80px" class="margin-left">
        <button mat-raised-button color="primary" (click)="signUp()">Logout</button> 
@@ -35,19 +38,20 @@
   </p>
   
   <div class="container">
-      <h1 style="COLOR:RED;"> Bank User Information </h1>
+      <h1 style="COLOR:RED;"> Bank Customer Information </h1>
       <table class="table" cellpadding="10">
         <thead class="thead-dark">
         <tr>
+          <th scope="col">Account Number</th>
           <th scope="col">Saluatation</th>
           <th scope="col">First Name</th>
           <th scope="col">Last Name</th>
-          <th scope="col">User Name</th>
+          <th scope="col">User Email</th>
           <th scope="col">User DOB</th>
           <th scope="col">City</th>
-          <th scope="col">User Status</th>
+          <th scope="col">Account Type</th>
           <th scope="col">Mobile No.</th>
-          <th scope="col">Pan Number</th>
+          <th scope="col">Pan No.</th>
      
         </tr>
         </thead>
@@ -56,23 +60,24 @@
           <td colspan="7" style="text-align: center"><h2>There are no User yet</h2></td>
         </tr>
         <tr *ngFor="let customer of customers">
+          <td>{{customer.accountId}}</td>
           <td>{{customer.saluatation}}</td>
           <td>{{customer.firstname}}</td>
           <td>{{customer.lastname}}</td>
-          <td>{{customer.username}}</td>
-          <td >{{customer.dateOfBirth}}</td>
+          <td>{{customer.useremail}}</td>
+          <td >{{customer.dateOfBirth | date}}</td>
           <td>{{customer.city}}</td>
-          <td>{{customer.status}}</td>
+          <td>{{customer.accountType}}</td>
           <td >{{customer.mobilenumber}}</td>
           <td >{{customer.pan}}</td>
           <td>
             <!-- <button type="button" class="btn btn-primary" (click)="goToUpdateBook(book.bid)">Edit</button>&nbsp; -->
-            <!--  <button type="button" class="btn btn-secondary" (click)="goToViewBook(book.id)">View</button>&nbsp; -->
+             <button type="button" class="btn btn-secondary" (click)="goToViewCustomer(customer.customerid)">View</button>&nbsp;
             <!-- <button type="button" class="btn btn-danger" (click)="deleteBookRecords(book.bid)">Delete</button> -->
           </td>
         </tr>
       
         </tbody>
-        <button type="button" class="btn btn-success" (click)="addCustomer()">Add Customer</button>
+        <!-- <button type="button" class="btn btn-success" (click)="addCustomer()">Add Customer</button> -->
       </table>
   </div>

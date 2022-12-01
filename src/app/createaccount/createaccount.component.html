@@ -1,0 +1,64 @@
+
+<div>
+    <p>
+        <mat-toolbar color="primary">
+          <img src = "/assets/image/banking.jpg" alt="" style="height:60px; width:100px" class="center"> &nbsp;&nbsp;
+          <span> Retails Bank System</span>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+         <img src = "/assets/image/login.jpg" alt="" style="height:50px; width:80px" class="margin-left">
+         &nbsp;<button mat-raised-button color="primary" (click)="signUp()">Logout</button> 
+      </mat-toolbar>
+    </p>
+  
+
+<div class="card-body">
+    <h1 style="COLOR:RED;"> Account Create New Customer </h1>
+    <div>
+      <Form [formGroup]="accountForm">
+        
+           <mat-form-field class="example-form-field" appearance="fill">
+             <mat-label>Customer Id</mat-label>
+              <input matInput type="number" formControlName="customerId">
+             </mat-form-field>&nbsp;
+            <mat-form-field class="example-form-field" appearance="fill">
+              <mat-label>Customer Email</mat-label>
+              <input matInput type="text" formControlName="email">
+            </mat-form-field>&nbsp;
+            <mat-form-field class="example-form-field" appearance="fill">
+              <mat-label>Current Balance</mat-label>
+              <input matInput type="number" value="0.0" formControlName="balance">
+            </mat-form-field>&nbsp;
+            
+            <mat-form-field appearance="outline">
+              <mat-label>Account Status</mat-label>
+              <mat-select placeholder="status" formControlName="status">
+                  <mat-option value="Active">Active</mat-option>
+                  <mat-option value="InActive">InActive</mat-option>
+              </mat-select>
+            </mat-form-field>&nbsp;
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Account Type</mat-label>
+              <mat-select placeholder="Account Type" formControlName="accountType">
+                  <mat-option value="Saving Account">Saving Account</mat-option>
+                  <mat-option value="Current Account">Current Account</mat-option>
+                  <mat-option value="Fixed Deposit Account">Fixed Deposit Account</mat-option>
+                  <mat-option value="Recurring Deposit Account">Recurring Deposit Account</mat-option>
+              </mat-select>
+            </mat-form-field>
+  
+            <!--<div mat-dialog-action [align]="'end'">
+               <button mat-raised-button color="Warn" mat-dialog-close color="primary" (click)="back()">Exit</button>
+              <button style="margin-left:8px;" mat-raised-button color="primary" (click)="createCustomer()">Save</button>
+            </div> -->
+      </Form>
+  </div>
+  </div>
+</div>

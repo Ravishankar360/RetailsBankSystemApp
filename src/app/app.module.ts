@@ -26,6 +26,9 @@ import { CustomerlistComponent } from './customerlist/customerlist.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AddcustomerComponent } from './addcustomer/addcustomer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ViewCustdetailsComponent } from './view-custdetails/view-custdetails.component';
+import { CreateaccountComponent } from './createaccount/createaccount.component';
+import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 
 
 @NgModule({
@@ -36,6 +39,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CustomerlistComponent,
     AddcustomerComponent,
     DashboardComponent,
+    ViewCustdetailsComponent,
+    CreateaccountComponent,
+    CustomerDashboardComponent,
   ],
   imports: [
     BrowserModule,

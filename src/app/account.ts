@@ -1,8 +1,9 @@
 export class Account {
-
     accountId!: number;
-    customerId!:string;
-    currentBalance!:number;
+    customerId!:number;
+    balance!:number;
     accountType!:string;
     ownerName!:string;
+    status!:string;
+    email!:string;
 }

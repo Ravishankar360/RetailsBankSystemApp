@@ -1,4 +1,5 @@
 <!-- <p>userlogin works!</p> -->
+<header>
 <div>
     <p>
       <mat-toolbar color="primary">
@@ -12,17 +13,16 @@
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-       <!-- <img src = "/assets/image/login.jpg" alt="" style="height:50px; width:80px" class="margin-left"><br> -->
-       <!-- <button mat-raised-button color="primary" (click)="signUp()">Logout</button>  -->
-      
+    
     </mat-toolbar>
   </p>
   
 </div>
+</header>
+<Body>
 <div class="container col-md-7">
     <h1 style="COLOR:RED;"> Bank User Login Page</h1>
-    <form (ngSubmit)="userlogin()">
+    <!-- <form (ngSubmit)="userlogin()">
         <div class="mb-3">
             <label for = "exampleFormControlInput1" class="form-lebel">UserName</label>
             <input type="text" [(ngModel)]="user.username" class="form-control" id="username" name="username">
@@ -34,7 +34,62 @@
         </div>
         <button type="submit" mat-raised-btn color="primary">Login</button> &nbsp;&nbsp;
         <button mat-raised-button color="primary" (click)="registrationUser()">User Registration</button> 
-         <!-- <a href="registration">Registration User</a> -->
-    </form>
+    </form> -->
 
+    <div>
+    <mat-accordion class="example-headers-align">
+        <Form [formGroup]="userLogin">
+        <h2 align="right" style="COLOR:rgb(7, 2, 2);" > PLEASE ENTER THE FOLLOWING :</h2>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Login Role Type</mat-label>
+                <mat-select placeholder="role" formControlName="role">
+                    <mat-option value="Customer">Customer</mat-option>
+                    <mat-option value="Employee">Employee</mat-option>
+                </mat-select>
+        </mat-form-field><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field appearance="fill">
+            <mat-label class="example-form-field">User Name</mat-label>
+            <input matInput type="text" formControlName="username">
+            <mat-icon matSuffix>User</mat-icon>
+          </mat-form-field><br>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password">
+            <mat-icon matSuffix>password</mat-icon>
+          </mat-form-field><br>
+
+          <div mat-dialog-action [align]="'end'">
+            <button style="margin-left:8px;" mat-raised-button color="primary" (click)="login()">login</button> &nbsp;
+            New ? <button mat-raised-button color="primary" (click)="registrationUser()">User Registration</button>
+          </div>
+        </Form>
+    </mat-accordion>
 </div>
+</div>
+</Body>
+<header>
+    <mat-toolbar color="primary"></mat-toolbar>
+</header>

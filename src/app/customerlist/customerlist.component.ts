@@ -61,8 +61,18 @@ export class CustomerlistComponent implements OnInit {
     this.router.navigate(['/customerlist']);
   }
 
+  createAccount(){
+    this.router.navigate(['/createAccount']);
+  }
+
   logout(){
     this.router.navigate(['/login']);
+  }
+
+  goToViewCustomer(customerid: number){
+    console.log("customerid: "+ customerid);
+    //alert("customerid :- "+customerid);
+    this.router.navigate(['/viewCustomer', customerid])
   }
 
 }

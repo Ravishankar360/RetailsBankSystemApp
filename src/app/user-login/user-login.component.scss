@@ -13,12 +13,12 @@ input.example-right-align::-webkit-inner-spin-button {
 }
 
 body  {
-  //background-image: url("/assets/image/Bank.png");
+ // background-image: url("/assets/image/retail-banking.jpg");
   background-color: #cccccc;
 }
 
 body, html {
-  margin: 0;
+  margin: 0%;
   height: 100%; 
 
   /* Center and scale the image nicely */
@@ -26,4 +26,21 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+
+
 

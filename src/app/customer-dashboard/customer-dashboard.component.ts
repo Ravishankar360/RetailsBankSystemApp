@@ -3,11 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerServiceService } from '../customer-service.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-customer-dashboard',
+  templateUrl: './customer-dashboard.component.html',
+  styleUrls: ['./customer-dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class CustomerDashboardComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private router: Router, private customerService: CustomerServiceService) { }
@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getDashboard(){
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/customerDashboard']);
   }
 
   getCustomers() {

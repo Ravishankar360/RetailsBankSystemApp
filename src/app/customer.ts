@@ -6,7 +6,7 @@ export class Customer {
     dateOfBirth!: string;
     pan!:string;
     password!:string;
-    userid!:string;
+    customerid!:number;
     username!:string;
     customername!: String;
     contactno!:Number;
@@ -20,8 +20,13 @@ export class Customer {
    cretedAt!:Date;
    firstname!:String;
    middlename!:String;
+   accountType!:String;
    lastname!:String;
    useremail!:string;
    updateAt!:Date;
+   accountId!: number;
+   customerId!:number;
+   balance!:number;
+   ownerName!:string;
    
 }

@@ -21,6 +21,7 @@
 </div>
 
 <div>
+  <h1 style="COLOR:RED;"> User Registration Form </h1>
     <Form [formGroup]="registrationForm">
         
         <mat-form-field appearance="outline">
@@ -47,6 +48,14 @@
           <mat-form-field class="example-form-field" appearance="fill">
             <mat-label>Last Name</mat-label>
             <input matInput type="text" formControlName="lastname">
+          </mat-form-field>
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>DOB</mat-label>
+            <input matInput type="date" formControlName="dateOfBirth">
+          </mat-form-field>
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Pan Number</mat-label>
+            <input matInput type="text" formControlName="pan">
           </mat-form-field>
           <mat-form-field class="example-form-field" appearance="fill">
             <mat-label>User Name</mat-label>
@@ -97,8 +106,18 @@
             </mat-select>
           </mat-form-field>
 
+          <mat-form-field appearance="outline">
+            <mat-label>Account Type</mat-label>
+            <mat-select placeholder="Account Type" formControlName="accountType">
+                <mat-option value="Saving Account">Saving Account</mat-option>
+                <mat-option value="Current Account">Current Account</mat-option>
+                <mat-option value="Fixed Deposit Account">Fixed Deposit Account</mat-option>
+                <mat-option value="Recurring Deposit Account">Recurring Deposit Account</mat-option>
+            </mat-select>
+          </mat-form-field>
+
           <div mat-dialog-action [align]="'end'">
-            <button mat-raised-button color="Warn" mat-dialog-close>Exit</button>
+            <button mat-raised-button color="Warn" mat-dialog-close color="primary" (click)="backlogin()">Exit</button>
             <button style="margin-left:8px;" mat-raised-button color="primary" (click)="addRegistered()">Save</button>
           </div>
     </Form>

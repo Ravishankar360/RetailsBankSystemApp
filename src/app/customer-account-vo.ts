@@ -1,15 +1,16 @@
-export class User {
+export class CustomerAccountVo {
+
    address!: string;
-    dateOfBirth!: string;
-    pan!:string;
-    password!:string;
-    customerid!:number;
-    username!:string;
-    customername!: String;
-    contactno!:Number;
-    city!: String;
-    email!: String;
-    status!: String;
+   dateOfBirth!: string;
+   pan!:string;
+   password!:string;
+   customerid!:number;
+   username!:string;
+   customername!: String;
+   contactno!:Number;
+   city!: String;
+   email!: String;
+   status!: String;
    postalcode!:Number;
    mobilenumber!:Number;
    saluatation!:String;
@@ -24,5 +25,5 @@ export class User {
    accountId!: number;
    customerId!:number;
    balance!:number;
-   ownerName!:string;  
+   ownerName!:string;
 }

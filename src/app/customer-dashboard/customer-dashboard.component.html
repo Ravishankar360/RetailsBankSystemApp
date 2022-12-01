@@ -1,4 +1,3 @@
-
 <div>
     <p>
       <mat-toolbar color="primary">
@@ -10,6 +9,7 @@
               <mat-icon>Dashboard</mat-icon>
               <span>Dashboard</span>
             </button>
+            <!-- 
             <button mat-menu-item (click)="getCustomers()">
               <mat-icon>Customer</mat-icon>
               <span>Customer Info</span>
@@ -21,8 +21,8 @@
             <button mat-menu-item (click)="logout()">
               <mat-icon>logout</mat-icon>
               <span>Logout</span>
-            </button>
-          </mat-menu>
+            </button>-->
+          </mat-menu> 
       <img src = "/assets/image/banking.jpg" alt="" style="height:60px; width:100px" class="center"> &nbsp;&nbsp;
       <span> Retails Bank System</span>
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -35,6 +35,7 @@
        
       
        <img src = "/assets/image/login.jpg" alt="" style="height:50px; width:80px" class="margin-left"><br>
+       <!-- {{customer.firstname}} -->
        <button mat-raised-button color="primary" (click)="signUp()">Logout</button> 
       
     </mat-toolbar>
@@ -42,7 +43,6 @@
 </div>
 
 <body>
-
 <div id="wrapper">
     <nav
       class="
@@ -59,14 +59,14 @@
         <br />
         <br />
         <div class="container-fluid">
-          <h3 class="text-dark mb-4">Employee Dashboard</h3>
+          <h3 class="text-dark mb-4">Customer Dashboard</h3>
           <div class="card shadow">
             <div class="card-body">
               <p>
-                Welcome back, Employee! <br />
-                <br />Here you will be able to create new customers, their
-                respective accounts and retrieve details of the existing
-                customers.
+                Welcome back, Customer! <br />
+                <br />Here you will be able to view account information, their
+                respective accounts and retrieve details of the own account
+                details. Dispaying customer’s profile.
               </p>
             </div>
           </div>

@@ -6,12 +6,16 @@
         </button>
         <mat-menu #menu="matMenu">
           <button mat-menu-item (click)="getDashboard()">
-            <!-- <mat-icon>more_vert</mat-icon> -->
+            <mat-icon>Dashboard</mat-icon>
             <span>Dashboard</span>
           </button>
           <button mat-menu-item (click)="getCustomers()">
-            <!-- <mat-icon>voicemail</mat-icon> -->
+            <mat-icon>Customer</mat-icon>
             <span>Customer Info</span>
+          </button>
+          <button mat-menu-item (click)="addCustomers()">
+            <mat-icon>New</mat-icon>
+            <span>New Customer Account</span>
           </button>
           <button mat-menu-item (click)="logout()">
             <mat-icon>logout</mat-icon>
@@ -26,8 +30,7 @@
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       
        <img src = "/assets/image/login.jpg" alt="" style="height:50px; width:80px" class="margin-left">
        <button mat-raised-button color="primary" (click)="signUp()">Logout</button> 
@@ -35,7 +38,7 @@
   </p>
 
 <div class="card-body">
-  <h1 style="COLOR:RED;"> Add New Customer </h1>
+  <h1 style="COLOR:RED;"> New Customer Account </h1>
   <div>
     <Form [formGroup]="customerForm">
         
@@ -113,6 +116,15 @@
             <mat-label>User Role</mat-label>
             <mat-select placeholder="role" formControlName="role">
                 <mat-option value="Customer">Customer</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Account Type</mat-label>
+            <mat-select placeholder="Account Type" formControlName="accountType">
+                <mat-option value="Saving Account">Saving Account</mat-option>
+                <mat-option value="Current Account">Current Account</mat-option>
+                <mat-option value="Fixed Deposit Account">Fixed Deposit Account</mat-option>
+                <mat-option value="Recurring Deposit Account">Recurring Deposit Account</mat-option>
             </mat-select>
           </mat-form-field>
 
