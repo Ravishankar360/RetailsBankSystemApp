@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
-import { UserLoginServiceService } from '../user-login-service.service';
 import { Router } from '@angular/router';
 import { HttpHeaders } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Customer } from '../customer';
 import { CustomerServiceService } from '../customer-service.service';
+import { CustomerAccountVo } from '../customer-account-vo';
+import { UserLoginServiceService } from '../user-login-service.service';
+import { CustomerDashboardComponent } from '../customer-dashboard/customer-dashboard.component';
 
 @Component({
   selector: 'app-user-login',
@@ -21,11 +23,10 @@ export class UserLoginComponent implements OnInit {
 
   users = new User();
   user: User= new User();
-  customers: Array<Customer> =[];
   userLogin !: FormGroup;
   reposne: any;
   reposnes: any;
-  customer= new Customer();
+  customersVo: any;
   
   constructor(private loginService: UserLoginServiceService,
      private router: Router,private formBuilder:FormBuilder,
@@ -52,16 +53,16 @@ export class UserLoginComponent implements OnInit {
     },error=>alert("Please enter correct username and password"));
   }
 
-  login(){
+  loginUser(){
     console.log(this.user);
+    localStorage.setItem("username", this.user.username)
     if(this.userLogin.value.role=='Employee'){
      this.loginService.loginUser(this.userLogin.value).subscribe(data=>{
       this.reposne = data;
       console.log(this.reposne.token);
       const headers = new HttpHeaders().set('Authorization', `Bearer ${this.reposne.token}`);
-      console.log(headers);
       alert("Login Successfully !!!");
-      console.log("First Name:-"+this.userLogin.value.username);
+      console.log("User Name:-"+this.userLogin.value.username);
       this.router.navigate(["/dashboard"]);
      },error=>alert("Please enter correct username and password"));
    } else if(this.userLogin.value.role=='Customer'){
@@ -70,10 +71,12 @@ export class UserLoginComponent implements OnInit {
       console.log(this.reposne.token);
       const headers = new HttpHeaders().set('Authorization', `Bearer ${this.reposne.token}`);
       alert("Login Successfully !!!");
-      console.log("First Name:-"+this.userLogin.value.username);
+      console.log("User Name:-"+this.userLogin.value.username);
       this.customerService.getByEmail(this.userLogin.value).subscribe(data=>{
-        console.log(data);
-        (data: Customer)=>this.customer=data;
+        console.log("data received"+data);
+        this.customersVo=data;
+        console.log(this.customersVo.firstname);
+        //this.customerdata.dataPass(this.customersVo);
       });
       this.router.navigate(["/customerDashboard"]);
     },error=>alert("Please enter correct username and password"));
@@ -90,4 +93,6 @@ export class UserLoginComponent implements OnInit {
   signUp(){
     this.router.navigate(['/login']);
   }
+
+  
 }

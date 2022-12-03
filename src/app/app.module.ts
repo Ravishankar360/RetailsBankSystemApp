@@ -29,6 +29,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ViewCustdetailsComponent } from './view-custdetails/view-custdetails.component';
 import { CreateaccountComponent } from './createaccount/createaccount.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
+import { TransactionDepositComponent } from './transaction-deposit/transaction-deposit.component';
+import { TransactionWithdrawnComponent } from './transaction-withdrawn/transaction-withdrawn.component';
 
 
 @NgModule({
@@ -42,6 +44,8 @@ import { CustomerDashboardComponent } from './customer-dashboard/customer-dashbo
     ViewCustdetailsComponent,
     CreateaccountComponent,
     CustomerDashboardComponent,
+    TransactionDepositComponent,
+    TransactionWithdrawnComponent
   ],
   imports: [
     BrowserModule,

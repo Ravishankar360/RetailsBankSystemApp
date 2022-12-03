@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerServiceService } from '../customer-service.service';
+import { CustomerAccountVo } from '../customer-account-vo';
+import { UserLoginServiceService } from '../user-login-service.service';
+import { User } from '../user';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-customer-dashboard',
@@ -9,8 +13,14 @@ import { CustomerServiceService } from '../customer-service.service';
 })
 export class CustomerDashboardComponent implements OnInit {
 
+  customersVo= new CustomerAccountVo();
+  users = new User();
+
   constructor(private route: ActivatedRoute,
-    private router: Router, private customerService: CustomerServiceService) { }
+    private router: Router, private customerService: CustomerServiceService,
+    private loginservice: UserLoginServiceService) { }
+
+    
 
   ngOnInit(): void {
   }
@@ -20,6 +30,10 @@ export class CustomerDashboardComponent implements OnInit {
   }
 
   getDashboard(){
+    //const username = localStorage.getItem("username");
+    //let customerid = this.route.snapshot.paramMap.get('customerid');
+    //let firstname = this.route.snapshot.paramMap.get('firstname');
+   //alert("FirstName:-"+username);
     this.router.navigate(['/customerDashboard']);
   }
 
@@ -33,6 +47,10 @@ export class CustomerDashboardComponent implements OnInit {
 
   addCustomers(){
     this.router.navigate(['/addCustomer']);
+  }
+
+  dataPass(customerVo:CustomerAccountVo){
+    alert(customerVo.firstname);
   }
 
 }

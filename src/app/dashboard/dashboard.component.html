@@ -18,6 +18,14 @@
               <mat-icon>New</mat-icon>
               <span>New Customer Account</span>
             </button>
+            <button mat-menu-item (click)="getTransaction()">
+              <mat-icon>Deposit</mat-icon>
+              <span>Deposit Amount</span>
+            </button>
+            <button mat-menu-item (click)="getWithdrawn()">
+              <mat-icon>Deposit</mat-icon>
+              <span>Withdrawn Amount</span>
+            </button>
             <button mat-menu-item (click)="logout()">
               <mat-icon>logout</mat-icon>
               <span>Logout</span>

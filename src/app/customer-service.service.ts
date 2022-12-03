@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Customer } from './customer';
 import { Observable } from 'rxjs';
+import { CustomerAccountVo } from './customer-account-vo';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ import { Observable } from 'rxjs';
 export class CustomerServiceService {
 
   customer: Customer= new Customer();
+  customerVo: Customer= new CustomerAccountVo();
   private baseUrl="http://localhost:8086";
 
   constructor(private httpClient: HttpClient) { }
@@ -32,4 +34,10 @@ export class CustomerServiceService {
     console.log(customer);
     return this.httpClient.post("http://localhost:8086/getFindByEmail",customer);
   }
+
+  // dataPass(customerVo:CustomerAccountVo):Observable<Object>{
+  //   alert(customerVo.firstname);
+  //   return this.httpClient.get(""+customerVo.firstname);
+  // }
+  
 }

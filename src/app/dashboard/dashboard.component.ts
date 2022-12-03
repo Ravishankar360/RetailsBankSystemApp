@@ -27,6 +27,14 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/customerlist']);
   }
 
+  getTransaction(){
+    this.router.navigate(['/deposit']);
+  }
+
+  getWithdrawn(){
+    this.router.navigate(['/witdrawn']);
+  }
+
   logout(){
     this.router.navigate(['/login']);
   }

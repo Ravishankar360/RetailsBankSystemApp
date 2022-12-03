@@ -35,7 +35,8 @@
        
       
        <img src = "/assets/image/login.jpg" alt="" style="height:50px; width:80px" class="margin-left"><br>
-       <!-- {{customer.firstname}} -->
+       <!-- <input matInput type="text" value="{{customersVo.firstname}}" disabled style="COLOR:rgb(14, 13, 13);">       -->
+      <p> {{customersVo.firstname}} </p>
        <button mat-raised-button color="primary" (click)="signUp()">Logout</button> 
       
     </mat-toolbar>
@@ -59,7 +60,7 @@
         <br />
         <br />
         <div class="container-fluid">
-          <h3 class="text-dark mb-4">Customer Dashboard</h3>
+          <h3 class="text-dark mb-4">Customer Dashboard , <p> {{customersVo.firstname}} </p></h3>
           <div class="card shadow">
             <div class="card-body">
               <p>

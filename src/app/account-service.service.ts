@@ -14,11 +14,15 @@ export class AccountServiceService {
   constructor(private httpClient: HttpClient) { }
 
   AccountRegistration(accountType: string,customerId: any ):Observable<Object>{
-    //alert("Test one");
     console.log(accountType);
     console.log(customerId);
     this.account.accountType=accountType;
     this.account.customerId=customerId;
     return this.httpClient.post("http://localhost:8087/createAccount",this.account);
+  }
+
+  amountDeposit(account:Account):Observable<Object>{
+    //alert("Test acccountService Portable Account Id:- "+account.accountId +": Balance:-"+ account.balance);
+    return this.httpClient.post("http://localhost:8087/updateBalance",account);
   }
 }

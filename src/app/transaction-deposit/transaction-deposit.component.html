@@ -1,3 +1,4 @@
+
 <div>
     <p>
       <mat-toolbar color="primary">
@@ -17,6 +18,10 @@
                 <mat-icon>New</mat-icon>
                 <span>New Customer Account</span>
               </button>
+              <!-- <button mat-menu-item (click)="getTransaction()">
+                <mat-icon>Deposit</mat-icon>
+                <span>Deposit Amount</span>
+              </button> -->
               <button mat-menu-item (click)="logout()">
                 <mat-icon>logout</mat-icon>
                 <span>Logout</span>
@@ -38,46 +43,23 @@
   </p>
   
   <div class="container">
-      <h1 style="COLOR:RED;"> Bank Customer Information </h1>
-      <table class="table" cellpadding="10">
-        <thead class="thead-dark">
-        <tr>
-          <th scope="col">Account Number</th>
-          <th scope="col">Saluatation</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Last Name</th>
-          <th scope="col">User Email</th>
-          <th scope="col">User DOB</th>
-          <th scope="col">Amount</th>
-          <th scope="col">Account Type</th>
-          <!-- <th scope="col">Mobile No.</th> -->
-          <th scope="col">Pan No.</th>
-     
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngIf="customers.length==0">
-          <td colspan="7" style="text-align: center"><h2>There are no User yet</h2></td>
-        </tr>
-        <tr *ngFor="let customer of customers">
-          <td>{{customer.accountId}}</td>
-          <td>{{customer.saluatation}}</td>
-          <td>{{customer.firstname}}</td>
-          <td>{{customer.lastname}}</td>
-          <td>{{customer.useremail}}</td>
-          <td >{{customer.dateOfBirth | date}}</td>
-          <td>{{customer.balance}}</td>
-          <td>{{customer.accountType}}</td>
-          <!-- <td >{{customer.mobilenumber}}</td> -->
-          <td >{{customer.pan}}</td>
-          <td>
-            <!-- <button type="button" class="btn btn-primary" (click)="goToUpdateBook(book.bid)">Edit</button>&nbsp; -->
-             <button type="button" class="btn btn-secondary" (click)="goToViewCustomer(customer.customerid)">View</button>&nbsp;
-             <!-- <button type="button" class="btn btn-danger" (click)="depositAmmount(customer.customerid)">Deposit</button> -->
-          </td>
-        </tr>
-      
-        </tbody>
-        <!-- <button type="button" class="btn btn-success" (click)="addCustomer()">Add Customer</button> -->
-      </table>
+      <h1 style="COLOR:RED;"> Bank Transaction Deposit </h1>
+
+      <Form [formGroup]="depositForm">
+        
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Account Number</mat-label>
+            <input matInput type="number" formControlName="accountId">
+          </mat-form-field> &nbsp; &nbsp;
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Amount</mat-label>
+            <input matInput type="number" formControlName="balance">
+          </mat-form-field>
+         
+          <div mat-dialog-action [align]="'end'">
+            <button mat-raised-button color="Warn" mat-dialog-close color="primary" (click)="back()">Exit</button>
+           <button style="margin-left:8px;" mat-raised-button color="primary" (click)="depositAmount()">Submit</button>
+          </div>
+    </Form>
   </div>
+

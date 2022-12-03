@@ -47,4 +47,24 @@ export class UserLoginServiceService {
   //   console.log(book);
   //   return this.httpClient.post("http://localhost:8083/book/updateBook",book);
   // }
+
+  loginUser1(user: User){
+
+    localStorage.setItem("user", user.username);
+    return true;
+  }
+
+  logoutUser(){
+    localStorage.removeItem("user");
+  }
+  isLoggedIn(){
+let user = localStorage.getItem("username");
+ if(user==null ||user=='' || user==undefined ){
+return false;
+
+ }else{
+
+  return true;
+ }
+  }
 }

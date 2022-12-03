@@ -75,4 +75,10 @@ export class CustomerlistComponent implements OnInit {
     this.router.navigate(['/viewCustomer', customerid])
   }
 
+  depositAmmount(customerid: number){
+    console.log("customerid: "+ customerid);
+    //alert("customerid :- "+customerid);
+    this.router.navigate(['/deposit', customerid])
+  }
+
 }

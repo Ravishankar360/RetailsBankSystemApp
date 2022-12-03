@@ -8,6 +8,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ViewCustdetailsComponent } from './view-custdetails/view-custdetails.component';
 import { CreateaccountComponent } from './createaccount/createaccount.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
+import { TransactionDepositComponent } from './transaction-deposit/transaction-deposit.component';
+import { TransactionWithdrawnComponent } from './transaction-withdrawn/transaction-withdrawn.component';
 
 const routes: Routes = [
   {path: '', component: UserLoginComponent},
@@ -18,7 +20,11 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'viewCustomer/:customerid', component: ViewCustdetailsComponent},
   {path: 'createAccount', component: CreateaccountComponent},
-  {path: 'customerDashboard', component: CustomerDashboardComponent}
+  {path: 'customerDashboard', component: CustomerDashboardComponent},
+  {path: 'deposit/:customerid', component: TransactionDepositComponent},
+  {path: 'deposit', component: TransactionDepositComponent},
+  {path: 'witdrawn/:customerid', component: TransactionWithdrawnComponent},
+  {path: 'witdrawn', component: TransactionWithdrawnComponent}
 
 ];
 
