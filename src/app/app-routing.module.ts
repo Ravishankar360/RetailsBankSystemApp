@@ -10,6 +10,7 @@ import { CreateaccountComponent } from './createaccount/createaccount.component'
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { TransactionDepositComponent } from './transaction-deposit/transaction-deposit.component';
 import { TransactionWithdrawnComponent } from './transaction-withdrawn/transaction-withdrawn.component';
+import { CustomerprofileComponent } from './customerprofile/customerprofile.component';
 
 const routes: Routes = [
   {path: '', component: UserLoginComponent},
@@ -24,8 +25,11 @@ const routes: Routes = [
   {path: 'deposit/:customerid', component: TransactionDepositComponent},
   {path: 'deposit', component: TransactionDepositComponent},
   {path: 'witdrawn/:customerid', component: TransactionWithdrawnComponent},
-  {path: 'witdrawn', component: TransactionWithdrawnComponent}
-
+  {path: 'witdrawn', component: TransactionWithdrawnComponent},
+  {path: 'customerDashboard/:cusVO', component: CustomerDashboardComponent},
+  {path: 'dashboard/:userVO', component: DashboardComponent},
+  {path: 'customerProfile/:customerid', component: CustomerprofileComponent},
+  {path: 'customerProfile', component: CustomerprofileComponent},
 ];
 
 @NgModule({

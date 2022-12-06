@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Customer } from './customer';
 import { Observable } from 'rxjs';
 import { CustomerAccountVo } from './customer-account-vo';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,10 @@ export class CustomerServiceService {
   customer: Customer= new Customer();
   customerVo: Customer= new CustomerAccountVo();
   private baseUrl="http://localhost:8086";
+  dataPass: any;
+  customers : any;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,private router: Router) { }
 
   customerRegistration(customer:Customer):Observable<Object>{
     console.log(customer);
@@ -35,9 +38,23 @@ export class CustomerServiceService {
     return this.httpClient.post("http://localhost:8086/getFindByEmail",customer);
   }
 
-  // dataPass(customerVo:CustomerAccountVo):Observable<Object>{
-  //   alert(customerVo.firstname);
-  //   return this.httpClient.get(""+customerVo.firstname);
-  // }
+  dataPassValue(customerVo:any){
+   //("dataPassValue:- "+customerVo.firstname);
+   this.customers=customerVo;
+   console.log(""+this.customers);
+  // this.router.navigate(['/customerDashboard']);
+  }
+
+  dataPassValueWithId(customerVo:any){
+    alert("dataPassValue:- "+customerVo.firstname);
+    this.customers=customerVo;
+    console.log(""+this.customers);
+   // this.router.navigate(['/customerDashboard']);
+   }
+
+ featchCustomerProfileFromRemote(customerId: any) : Observable<any>{
+  alert("featchCustomerProfileFromRemote CustomerID:- "+customerId);
+  return this.httpClient.get<any>('http://localhost:8086/viewAllCustomerById/' + customerId);
+ }
   
 }

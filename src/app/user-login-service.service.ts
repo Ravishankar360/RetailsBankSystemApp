@@ -39,15 +39,6 @@ export class UserLoginServiceService {
     return this.httpClient.post('http://localhost:8085/getByUserEmail', user)
   }
 
-  // deleteBookById(bid: number): Observable<any> {
-  //   return this.httpClient.delete<any>('http://localhost:8083/book/deleteBook/' + bid);
-  // }
-
-  // updateBookRegistered(book:Book):Observable<Object>{
-  //   console.log(book);
-  //   return this.httpClient.post("http://localhost:8083/book/updateBook",book);
-  // }
-
   loginUser1(user: User){
 
     localStorage.setItem("user", user.username);

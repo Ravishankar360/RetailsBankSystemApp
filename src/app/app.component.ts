@@ -8,7 +8,7 @@ import { UserRegistrationComponent } from './user-registration/user-registration
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'DigitalBookApp';
+  title = 'RetailsBankSystemApp';
   constructor(public dialog: MatDialog) {}
   openDialog1(): void {
     const dialogRef1 = this.dialog.open(UserRegistrationComponent, {

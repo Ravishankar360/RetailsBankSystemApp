@@ -31,6 +31,7 @@ import { CreateaccountComponent } from './createaccount/createaccount.component'
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { TransactionDepositComponent } from './transaction-deposit/transaction-deposit.component';
 import { TransactionWithdrawnComponent } from './transaction-withdrawn/transaction-withdrawn.component';
+import { CustomerprofileComponent } from './customerprofile/customerprofile.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { TransactionWithdrawnComponent } from './transaction-withdrawn/transacti
     CreateaccountComponent,
     CustomerDashboardComponent,
     TransactionDepositComponent,
-    TransactionWithdrawnComponent
+    TransactionWithdrawnComponent,
+    CustomerprofileComponent,
   ],
   imports: [
     BrowserModule,

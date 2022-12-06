@@ -42,7 +42,8 @@
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        
       
-       <img src = "/assets/image/login.jpg" alt="" style="height:50px; width:80px" class="margin-left"><br>
+       <img src = "/assets/image/login.jpg" alt="" style="height:50px; width:80px" class="margin-left">
+       {{datafirstName}}<br>
        <button mat-raised-button color="primary" (click)="signUp()">Logout</button> 
       
     </mat-toolbar>
@@ -71,7 +72,7 @@
           <div class="card shadow">
             <div class="card-body">
               <p>
-                Welcome back, Employee! <br />
+                Welcome back, {{datafirstName}} {{datalastName}} ! <br />
                 <br />Here you will be able to create new customers, their
                 respective accounts and retrieve details of the existing
                 customers.

@@ -62,8 +62,13 @@ export class UserLoginComponent implements OnInit {
       console.log(this.reposne.token);
       const headers = new HttpHeaders().set('Authorization', `Bearer ${this.reposne.token}`);
       alert("Login Successfully !!!");
+      this.customerService.getByEmail(this.userLogin.value).subscribe(data=>{
+        this.customersVo=data;
+        let userVO= this.customersVo;
+         this.customerService.dataPassValue(this.customersVo)  
+          this.router.navigate(["/dashboard",userVO]);
+      });
       console.log("User Name:-"+this.userLogin.value.username);
-      this.router.navigate(["/dashboard"]);
      },error=>alert("Please enter correct username and password"));
    } else if(this.userLogin.value.role=='Customer'){
     this.loginService.loginUser(this.userLogin.value).subscribe(data=>{
@@ -73,12 +78,12 @@ export class UserLoginComponent implements OnInit {
       alert("Login Successfully !!!");
       console.log("User Name:-"+this.userLogin.value.username);
       this.customerService.getByEmail(this.userLogin.value).subscribe(data=>{
-        console.log("data received"+data);
         this.customersVo=data;
         console.log(this.customersVo.firstname);
-        //this.customerdata.dataPass(this.customersVo);
+        let cusVO= this.customersVo;
+         this.customerService.dataPassValue(this.customersVo)
+          this.router.navigate(["/customerDashboard",cusVO]);  
       });
-      this.router.navigate(["/customerDashboard"]);
     },error=>alert("Please enter correct username and password"));
    }else{
      alert("Please fill all mandatory field !!!");

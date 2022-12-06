@@ -5,6 +5,7 @@ import { CustomerAccountVo } from '../customer-account-vo';
 import { UserLoginServiceService } from '../user-login-service.service';
 import { User } from '../user';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-customer-dashboard',
@@ -15,14 +16,25 @@ export class CustomerDashboardComponent implements OnInit {
 
   customersVo= new CustomerAccountVo();
   users = new User();
+  customers = new CustomerAccountVo();
+  datafirstName : any;
+  datalastName : any;
+  customerId : any;
 
   constructor(private route: ActivatedRoute,
     private router: Router, private customerService: CustomerServiceService,
-    private loginservice: UserLoginServiceService) { }
-
-    
+    private loginservice: UserLoginServiceService, private httpClient: HttpClient,
+    private actRoute: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
+    this.datafirstName = this.actRoute.snapshot.params['firstname'];
+    this.datalastName = this.actRoute.snapshot.params['lastname'];
+    this.customerId = this.actRoute.snapshot.params['customerid'];
+    this.customers.customerid =this.customerId;
+    this.customers.firstname=this.datafirstName;
+    this.customers.lastname =this.datalastName;
+
   }
 
   signUp(){
@@ -30,10 +42,6 @@ export class CustomerDashboardComponent implements OnInit {
   }
 
   getDashboard(){
-    //const username = localStorage.getItem("username");
-    //let customerid = this.route.snapshot.paramMap.get('customerid');
-    //let firstname = this.route.snapshot.paramMap.get('firstname');
-   //alert("FirstName:-"+username);
     this.router.navigate(['/customerDashboard']);
   }
 
@@ -49,8 +57,12 @@ export class CustomerDashboardComponent implements OnInit {
     this.router.navigate(['/addCustomer']);
   }
 
-  dataPass(customerVo:CustomerAccountVo){
-    alert(customerVo.firstname);
+
+  getCustomersDetails(){
+    this.customerId = this.actRoute.snapshot.params['customerid'];
+    alert("getCustomersDetails()"+this.customerId)
+    this.customerService.dataPassValueWithId(this.customerId)
+     this.router.navigate(['/customerProfile']);  
   }
 
 }
