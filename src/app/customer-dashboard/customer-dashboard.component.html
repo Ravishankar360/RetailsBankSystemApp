@@ -5,13 +5,18 @@
             <mat-icon>dialpad</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="getDashboard()">
+            <button mat-menu-item (click)="getDashboard(customers.customerid)">
               <mat-icon>Dashboard</mat-icon>
               <span>Dashboard</span>
             </button>
-            <button mat-menu-item (click)="getCustomersDetails()">
+            <button mat-menu-item (click)="getCustomersDetails(customers.customerid)">
               <mat-icon>Customer</mat-icon>
               <span>Customer Profile</span>
+            </button>
+
+            <button mat-menu-item (click)="getSatementDetails(customers.customerid)">
+              <mat-icon>Statement</mat-icon>
+              <span>View Bank Statement</span>
             </button>
 
             <button mat-menu-item (click)="logout()">

@@ -18,8 +18,6 @@ export class ViewCustdetailsComponent implements OnInit {
   ngOnInit(): void {
     let customerid = this._activatedRouter.snapshot.paramMap.get('customerid');
     console.log(customerid);
-    //var id : number= +customerid;
-    //alert(customerid);
    this.customerService.featchCustomerByIdFromRemote(Number(customerid)).subscribe(
     data=>{
       console.log("data received");

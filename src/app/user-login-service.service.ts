@@ -21,11 +21,6 @@ export class UserLoginServiceService {
     console.log(user);
     return this.httpClient.post("http://localhost:8085/register",user);
   }
-
-  // addBookRegistered(book:Book):Observable<Object>{
-  //   console.log(book);
-  //   return this.httpClient.post("http://localhost:8083/book/addbook",book);
-  // }
   
   getUserListFromRemote(): Observable<any>{
     return this.httpClient.get<any>('http://localhost:8085/viewAllUsers');

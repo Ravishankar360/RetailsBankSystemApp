@@ -26,4 +26,9 @@ export class TransactionserviceService {
      //alert("Test transactionStatement Withdrawn Account Id:- "+transaction.accountId +": Balance:-"+ transaction.pbalance);
      return this.httpClient.post("http://localhost:8088/Withdraw",transaction);
    }
+
+   featchTransactionStatement(customerId: any) : Observable<any>{
+    //alert("featchTransactionStatement CustomerId:- "+customerId);
+    return this.httpClient.get<any>('http://localhost:8088/getTransactionStatement/' + customerId);
+   }
 }

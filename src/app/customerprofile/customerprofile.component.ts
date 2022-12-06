@@ -22,18 +22,18 @@ export class CustomerprofileComponent implements OnInit {
   ngOnInit(): void {
     let customerid = this.actRoute.snapshot.paramMap.get('customerid');
     console.log(customerid);
-
     this.datafirstName = this.actRoute.snapshot.params['firstname'];
     this.datalastName = this.actRoute.snapshot.params['lastname'];
     this.customerId = this.actRoute.snapshot.params['customerid'];
-    //var id : number= +customerid;
-    alert(this.customerId);
-   this.customerService.featchCustomerProfileFromRemote(this.customerId).subscribe(
+    this.customers.customerid =this.customerId;
+    this.customers.firstname=this.datafirstName;
+    this.customers.lastname =this.datalastName;
+
+   this.customerService.featchCustomerProfileFromRemote(customerid).subscribe(
     data=>{
-      alert(data);
-      console.log("data received");
-      this.customersVo = data;
-      
+    //alert(data);
+      console.log("data received"+data);
+      this.customersVo = data; 
     },
       error => console.log("Exception Occured")
     )
@@ -42,6 +42,19 @@ export class CustomerprofileComponent implements OnInit {
 
   signUp(){
     this.router.navigate(['/login']);
+  }
+
+  back(customerid: number){
+    alert("back button :- "+customerid)
+    this.customerService.getByCustomrId(customerid).subscribe(data=>{
+      this.customersVo=data;
+      console.log(this.customersVo.firstname);
+      this.datafirstName=this.customersVo.firstname;
+      this.datalastName=this.customersVo.lastname;
+      let cusVO= this.customersVo;
+      this.customerService.dataPassValue(this.customersVo)
+      this.router.navigate(["/customerDashboard",cusVO]);  
+    });
   }
 
 

@@ -53,8 +53,13 @@ export class CustomerServiceService {
    }
 
  featchCustomerProfileFromRemote(customerId: any) : Observable<any>{
-  alert("featchCustomerProfileFromRemote CustomerID:- "+customerId);
+ // alert("featchCustomerProfileFromRemote CustomerID:- "+customerId);
   return this.httpClient.get<any>('http://localhost:8086/viewAllCustomerById/' + customerId);
+ }
+
+ getByCustomrId(customerId: any) : Observable<any>{
+   //alert("getByCustomrId CustomerID:- "+customerId);
+   return this.httpClient.get<any>('http://localhost:8086/viewAllCustomerById/' + customerId);
  }
   
 }

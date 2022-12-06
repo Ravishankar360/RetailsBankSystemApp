@@ -8,4 +8,5 @@ export class Transaction {
     type!: string;
 	status!:string;
 	accountType!:string;
+	date !:Date;
 }

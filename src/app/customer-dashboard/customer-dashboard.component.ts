@@ -20,6 +20,7 @@ export class CustomerDashboardComponent implements OnInit {
   datafirstName : any;
   datalastName : any;
   customerId : any;
+  cusVO:any;
 
   constructor(private route: ActivatedRoute,
     private router: Router, private customerService: CustomerServiceService,
@@ -33,7 +34,7 @@ export class CustomerDashboardComponent implements OnInit {
     this.customerId = this.actRoute.snapshot.params['customerid'];
     this.customers.customerid =this.customerId;
     this.customers.firstname=this.datafirstName;
-    this.customers.lastname =this.datalastName;
+    this.customers.lastname =this.datalastName; 
 
   }
 
@@ -41,8 +42,16 @@ export class CustomerDashboardComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  getDashboard(){
-    this.router.navigate(['/customerDashboard']);
+  getDashboard(customerid: number){
+    this.customerService.getByCustomrId(customerid).subscribe(data=>{
+      this.customersVo=data;
+      console.log(this.customersVo.firstname);
+      this.datafirstName=this.customersVo.firstname;
+      this.datalastName=this.customersVo.lastname;
+      this.cusVO= this.customersVo;
+      this.customerService.dataPassValue(this.customersVo)
+      this.router.navigate(["/customerDashboard",this.cusVO]); 
+    });
   }
 
   getCustomers() {
@@ -58,11 +67,31 @@ export class CustomerDashboardComponent implements OnInit {
   }
 
 
-  getCustomersDetails(){
+  getCustomersDetails(customerid: number){
+    alert("getCustomersDetails()"+customerid)
     this.customerId = this.actRoute.snapshot.params['customerid'];
-    alert("getCustomersDetails()"+this.customerId)
-    this.customerService.dataPassValueWithId(this.customerId)
-     this.router.navigate(['/customerProfile']);  
+    alert("getCustomersDetails()"+customerid)
+     this.router.navigate(['/customerProfile',customerid]);  
+  }
+
+  getSatementDetails(customerid: number){
+    alert("getSatementDetails() customerid:- "+customerid)
+    this.customerId = this.actRoute.snapshot.params['customerid'];
+    alert("getSatementDetails() customerId :-"+this.customerId)
+     this.router.navigate(['/viewTransaction',customerid]);  
+  }
+
+  back(customerid: number){
+    //alert("back button :- "+customerid)
+    this.customerService.getByCustomrId(customerid).subscribe(data=>{
+      this.customersVo=data;
+      console.log(this.customersVo.firstname);
+      this.datafirstName=this.customersVo.firstname;
+      this.datalastName=this.customersVo.lastname;
+      let cusVO= this.customersVo;
+      this.customerService.dataPassValue(this.customersVo)
+      this.router.navigate(["/customerDashboard",cusVO]);  
+    });
   }
 
 }
