@@ -65,7 +65,8 @@ export class CustomerWithDrawnComponent implements OnInit {
 
   withdrawnAmount(customerid: number){
     console.log("String "+this.withdrawnCustomerForm.value);
-
+  if((this.withdrawnCustomerForm.value.accountId !='' && this.withdrawnCustomerForm.value.accountId != null)&&
+    (this.withdrawnCustomerForm.value.balance !='' && this.withdrawnCustomerForm.value.balance != null)){
     this.accountService.amountDeposit(this.withdrawnCustomerForm.value).subscribe(data=>{
       this.transactionData=data;
       console.log(this.transactionData);
@@ -81,6 +82,9 @@ export class CustomerWithDrawnComponent implements OnInit {
           });
         },error=>alert("Account Number wrong, Please fill correct data !!!"));
     },error=>alert("Something went wrong"));
+   }else{
+    alert("Please fill all mandatory field !!");
+   }
   }
 
 }

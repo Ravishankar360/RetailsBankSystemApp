@@ -67,7 +67,8 @@ export class CustomerDepositComponent implements OnInit {
 
   depositAmount(){
     console.log("String "+this.depositCustomerForm.value);
-
+    if((this.depositCustomerForm.value.accountId !='' && this.depositCustomerForm.value.accountId != null)&&
+    (this.depositCustomerForm.value.balance !='' && this.depositCustomerForm.value.balance != null)){
     this.accountService.amountDeposit(this.depositCustomerForm.value).subscribe(data=>{
       this.transactionData=data;
       console.log(this.transactionData);
@@ -83,6 +84,9 @@ export class CustomerDepositComponent implements OnInit {
         });
         },error=>alert("Account Number wrong, Please fill correct data !!!"));
     },error=>alert("Something went wrong"));
+   }else{
+    alert("Please fill all mandatory field !!");
+   }
   }
 
 

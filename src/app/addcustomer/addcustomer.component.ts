@@ -43,9 +43,22 @@ export class AddcustomerComponent implements OnInit {
 
   createCustomer() {
     console.log("String "+this.customerForm.value);
-    if(this.customerForm.value.accountType !=null && this.customerForm.value.accountType==''){
-      alert("Please all mandatory field fill !!!!");
-    }else{
+    if((this.customerForm.value.saluatation !='' && this.customerForm.value.saluatation != null)&&
+  (this.customerForm.value.firstname !='' && this.customerForm.value.firstname != null)
+  && (this.customerForm.value.lastname !='' && this.customerForm.value.lastname != null)
+  && (this.customerForm.value.dateOfBirth !='' && this.customerForm.value.dateOfBirth != null)
+  && (this.customerForm.value.username !='' && this.customerForm.value.username != null)
+  && (this.customerForm.value.useremail !='' && this.customerForm.value.useremail != null)
+  && (this.customerForm.value.password !='' && this.customerForm.value.password != null)
+  && (this.customerForm.value.mobilenumber !='' && this.customerForm.value.mobilenumber != null)
+  && (this.customerForm.value.address !='' && this.customerForm.value.address != null)
+  && (this.customerForm.value.city !='' && this.customerForm.value.city != null)
+  && (this.customerForm.value.postalcode !='' && this.customerForm.value.postalcode != null)
+  && (this.customerForm.value.status !='' && this.customerForm.value.status != null)
+  && (this.customerForm.value.role !='' && this.customerForm.value.role != null)
+  && (this.customerForm.value.accountType !='' && this.customerForm.value.accountType != null)
+  && (this.customerForm.value.dateOfBirth !='' && this.customerForm.value.dateOfBirth != null)
+  && (this.customerForm.value.pan !='' && this.customerForm.value.pan != null)){
     this.customerService.customerRegistration(this.customerForm.value).subscribe(data=>{
       (data: Customer)=> this.customers=data;
       console.log(data);
@@ -58,6 +71,8 @@ export class AddcustomerComponent implements OnInit {
       //alert("User Created Successfully")
       this.router.navigate(["customerlist"]);
     },error=>alert("Something went wrong"));
+   }else{
+    alert("Please fill all mandatory field !!");
    }
   }
 

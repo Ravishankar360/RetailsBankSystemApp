@@ -19,6 +19,15 @@ export class CustomerlistComponent implements OnInit {
   ngOnInit(): void {
     this.getCustomers();
   }
+
+  getTransaction(){
+    this.router.navigate(['/deposit']);
+  }
+
+  getWithdrawn(){
+    this.router.navigate(['/witdrawn']);
+  }
+  
   getUsers() {
     this.userloginService.getUserListFromRemote().subscribe(
       data=> this.users=data ,error=>console.log("Exception occurred 1"))

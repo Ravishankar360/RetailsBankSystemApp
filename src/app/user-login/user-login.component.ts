@@ -55,6 +55,9 @@ export class UserLoginComponent implements OnInit {
 
   loginUser(){
     console.log(this.user);
+    if((this.userLogin.value.role !='' && this.userLogin.value.role != null)&&
+    (this.userLogin.value.username !='' && this.userLogin.value.username != null)
+    &&(this.userLogin.value.password !='' && this.userLogin.value.password != null)){
     localStorage.setItem("username", this.user.username)
     if(this.userLogin.value.role=='Employee'){
      this.loginService.loginUser(this.userLogin.value).subscribe(data=>{
@@ -85,10 +88,16 @@ export class UserLoginComponent implements OnInit {
           this.router.navigate(["/customerDashboard",cusVO]);  
       });
     },error=>alert("Please enter correct username and password"));
-   }else{
-     alert("Please fill all mandatory field !!!");
-     this.router.navigate(["/login"]);
+    }
+    else{
+    alert("Please fill all mandatory field !!!");
+    this.router.navigate(["/login"]);
+    }
    }
+   else{
+    alert("Please fill all mandatory field !!!");
+    this.router.navigate(["/login"]);
+    }
   }
   
   registrationUser(){

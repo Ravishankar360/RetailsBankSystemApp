@@ -65,7 +65,8 @@ export class TransactionWithdrawnComponent implements OnInit {
 
   withdrawnAmount(){
     console.log("String "+this.withdrawnForm.value);
-
+    if((this.withdrawnForm.value.accountId !='' && this.withdrawnForm.value.accountId != null)&&
+    (this.withdrawnForm.value.balance !='' && this.withdrawnForm.value.balance != null)){
     this.accountService.amountDeposit(this.withdrawnForm.value).subscribe(data=>{
       this.transactionData=data;
       console.log(this.transactionData);
@@ -74,6 +75,9 @@ export class TransactionWithdrawnComponent implements OnInit {
          this.router.navigate(['/customerlist']);
         },error=>alert("Account Number wrong, Please fill correct data !!!"));
     },error=>alert("Something went wrong"));
+   }else{
+    alert("Please fill all mandatory field !!");
+   }
   }
 
 
