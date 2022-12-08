@@ -68,16 +68,13 @@ export class CustomerDashboardComponent implements OnInit {
 
 
   getCustomersDetails(customerid: number){
-    alert("getCustomersDetails()"+customerid)
     this.customerId = this.actRoute.snapshot.params['customerid'];
-    alert("getCustomersDetails()"+customerid)
-     this.router.navigate(['/customerProfile',customerid]);  
+    this.router.navigate(['/customerProfile',customerid]);  
   }
 
   getSatementDetails(customerid: number){
-    alert("getSatementDetails() customerid:- "+customerid)
     this.customerId = this.actRoute.snapshot.params['customerid'];
-    alert("getSatementDetails() customerId :-"+this.customerId)
+    //alert("getSatementDetails() customerId :-"+this.customerId)
      this.router.navigate(['/viewTransaction',customerid]);  
   }
 
@@ -91,7 +88,16 @@ export class CustomerDashboardComponent implements OnInit {
       let cusVO= this.customersVo;
       this.customerService.dataPassValue(this.customersVo)
       this.router.navigate(["/customerDashboard",cusVO]);  
-    });
+    }); 
   }
+
+  getTransactionByCustomer(customerid: number){
+    this.router.navigate(['/custdeposit',customerid]);
+  }
+
+  getWithdrawnByCustomer(customerid: number){
+    this.router.navigate(['/custwitdrawn',customerid]);
+  }
+
 
 }

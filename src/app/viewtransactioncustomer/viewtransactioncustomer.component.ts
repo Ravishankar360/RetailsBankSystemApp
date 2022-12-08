@@ -25,10 +25,6 @@ export class ViewtransactioncustomerComponent implements OnInit {
     ,private actRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    //this.source=this.actRoute.snapshot.queryParamMap.get('source')
-    //let customersVo = this.actRoute.snapshot.paramMap.get('cusVO');
-    //let customersVo1 = this.actRoute.snapshot.paramMap.get('cusVO');
-    //alert(customersVo);
     let customerid = this.actRoute.snapshot.paramMap.get('customerid');
     console.log(customerid);
     this.datafirstName = this.actRoute.snapshot.params['firstname'];
@@ -70,7 +66,7 @@ export class ViewtransactioncustomerComponent implements OnInit {
       this.datafirstName=this.customersVo.firstname;
       this.datalastName=this.customersVo.lastname;
       let cusVO= this.customersVo;
-      this.customerService.dataPassValue(this.customersVo)
+      //this.customerService.dataPassValue(this.customersVo)
       this.router.navigate(["/customerDashboard",cusVO],{queryParams:{source:'Application'}});  
     });
   }

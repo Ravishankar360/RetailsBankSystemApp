@@ -43,6 +43,22 @@ export class UserRegistrationComponent implements OnInit {
 
 addRegistered(){
   console.log(this.registrationForm.value);
+  if((this.registrationForm.value.saluatation !='' && this.registrationForm.value.saluatation != null)&&
+  (this.registrationForm.value.firstname !='' && this.registrationForm.value.firstname != null)
+  && (this.registrationForm.value.lastname !='' && this.registrationForm.value.lastname != null)
+  && (this.registrationForm.value.dateOfBirth !='' && this.registrationForm.value.dateOfBirth != null)
+  && (this.registrationForm.value.username !='' && this.registrationForm.value.username != null)
+  && (this.registrationForm.value.useremail !='' && this.registrationForm.value.useremail != null)
+  && (this.registrationForm.value.password !='' && this.registrationForm.value.password != null)
+  && (this.registrationForm.value.mobilenumber !='' && this.registrationForm.value.mobilenumber != null)
+  && (this.registrationForm.value.address !='' && this.registrationForm.value.address != null)
+  && (this.registrationForm.value.city !='' && this.registrationForm.value.city != null)
+  && (this.registrationForm.value.postalcode !='' && this.registrationForm.value.postalcode != null)
+  && (this.registrationForm.value.status !='' && this.registrationForm.value.status != null)
+  && (this.registrationForm.value.role !='' && this.registrationForm.value.role != null)
+  && (this.registrationForm.value.accountType !='' && this.registrationForm.value.accountType != null)
+  && (this.registrationForm.value.dateOfBirth !='' && this.registrationForm.value.dateOfBirth != null)
+  && (this.registrationForm.value.pan !='' && this.registrationForm.value.pan != null)){
   this.userloginService.userRegistration(this.registrationForm.value).subscribe(data=>{
     alert("Customer Role :- "+this.registrationForm.value.role)
     if(this.registrationForm.value.role=='Customer'){
@@ -61,6 +77,9 @@ addRegistered(){
     }
     this.router.navigate(["login"]);
   },error=>alert("Something went wrong"));
+ }else{
+    alert("Please fill all mandatory field !!");
+ }
 }
 
 backlogin(){

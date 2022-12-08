@@ -12,6 +12,8 @@ import { TransactionDepositComponent } from './transaction-deposit/transaction-d
 import { TransactionWithdrawnComponent } from './transaction-withdrawn/transaction-withdrawn.component';
 import { CustomerprofileComponent } from './customerprofile/customerprofile.component';
 import { ViewtransactioncustomerComponent } from './viewtransactioncustomer/viewtransactioncustomer.component';
+import { CustomerDepositComponent } from './customer-deposit/customer-deposit.component';
+import { CustomerWithDrawnComponent } from './customer-with-drawn/customer-with-drawn.component';
 
 const routes: Routes = [
   {path: '', component: UserLoginComponent},
@@ -33,6 +35,10 @@ const routes: Routes = [
   {path: 'customerProfile', component: CustomerprofileComponent},
   {path: 'viewTransaction/:customerid', component: ViewtransactioncustomerComponent},
   {path: 'viewTransaction', component: ViewtransactioncustomerComponent},
+  {path: 'custdeposit/:customerid', component: CustomerDepositComponent},
+  {path: 'custdeposit', component: CustomerDepositComponent},
+  {path: 'custwitdrawn/:customerid', component: CustomerWithDrawnComponent},
+  {path: 'custwitdrawn', component: CustomerWithDrawnComponent},
 ];
 
 @NgModule({

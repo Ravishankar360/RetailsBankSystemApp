@@ -1,0 +1,45 @@
+
+<div>
+    <p>
+      <mat-toolbar color="primary">
+          
+      <img src = "/assets/image/banking.jpg" alt="" style="height:60px; width:100px" class="center"> &nbsp;&nbsp;
+      <span> Retails Bank System</span>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      
+       <img src = "/assets/image/login.jpg" alt="" style="height:50px; width:80px" class="margin-left">
+       <button mat-raised-button color="primary" (click)="signUp()">Logout</button> 
+    </mat-toolbar>
+  </p>
+  
+  <div class="container">
+      <h1 style="COLOR:RED;"> Bank Transaction Withdrawn </h1>
+
+      <Form [formGroup]="withdrawnCustomerForm">
+        
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Customer Number</mat-label>
+            <input matInput type="number" value="{{customers.customerid}}" disabled style="COLOR:rgb(14, 13, 13);">
+          </mat-form-field>
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Account Number</mat-label>
+            <input matInput type="number" formControlName="accountId">
+          </mat-form-field> &nbsp; &nbsp;
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Amount</mat-label>
+            <input matInput type="number" formControlName="balance">
+          </mat-form-field>
+         
+          <div mat-dialog-action [align]="'end'">
+            <button mat-raised-button color="Warn" mat-dialog-close color="primary" (click)="back(customers.customerid)">Exit</button>
+           <button style="margin-left:8px;" mat-raised-button color="primary" (click)="withdrawnAmount(customers.customerid)">Submit</button>
+          </div>
+    </Form>
+  </div>
+

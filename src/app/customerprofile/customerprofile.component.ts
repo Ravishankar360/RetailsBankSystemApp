@@ -57,5 +57,10 @@ export class CustomerprofileComponent implements OnInit {
     });
   }
 
+  getSatementDetails(customerid: number){
+    this.customerId = this.actRoute.snapshot.params['customerid'];
+    //alert("getSatementDetails() customerId :-"+this.customerId)
+     this.router.navigate(['/viewTransaction',customerid]);  
+  }
 
 }

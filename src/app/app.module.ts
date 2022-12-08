@@ -33,6 +33,8 @@ import { TransactionDepositComponent } from './transaction-deposit/transaction-d
 import { TransactionWithdrawnComponent } from './transaction-withdrawn/transaction-withdrawn.component';
 import { CustomerprofileComponent } from './customerprofile/customerprofile.component';
 import { ViewtransactioncustomerComponent } from './viewtransactioncustomer/viewtransactioncustomer.component';
+import { CustomerDepositComponent } from './customer-deposit/customer-deposit.component';
+import { CustomerWithDrawnComponent } from './customer-with-drawn/customer-with-drawn.component';
 
 
 @NgModule({
@@ -50,6 +52,8 @@ import { ViewtransactioncustomerComponent } from './viewtransactioncustomer/view
     TransactionWithdrawnComponent,
     CustomerprofileComponent,
     ViewtransactioncustomerComponent,
+    CustomerDepositComponent,
+    CustomerWithDrawnComponent,
   ],
   imports: [
     BrowserModule,
