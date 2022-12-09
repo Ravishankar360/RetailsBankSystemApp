@@ -13,6 +13,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatListModule} from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
@@ -66,6 +67,7 @@ import { CustomerWithDrawnComponent } from './customer-with-drawn/customer-with-
     MatInputModule,
     MatSelectModule,
     MatDatepickerModule,
+    MatPaginatorModule,
     MatNativeDateModule,
     MatProgressBarModule,
     MatRadioModule,
