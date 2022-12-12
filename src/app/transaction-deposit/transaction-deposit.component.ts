@@ -67,7 +67,8 @@ export class TransactionDepositComponent implements OnInit {
     console.log("String "+this.depositForm.value);
     if((this.depositForm.value.accountId !='' && this.depositForm.value.accountId != null)&&
     (this.depositForm.value.balance !='' && this.depositForm.value.balance != null)){
-    this.accountService.amountDeposit(this.depositForm.value).subscribe(data=>{
+     if(this.depositForm.value.balance <=50001 && this.depositForm.value.balance >0){
+      this.accountService.amountDeposit(this.depositForm.value).subscribe(data=>{
       this.transactionData=data;
       console.log(this.transactionData);
       this.transactionService.transactionStatement(this.transactionData).subscribe(data=>{
@@ -75,6 +76,9 @@ export class TransactionDepositComponent implements OnInit {
          this.router.navigate(['/customerlist']);
         },error=>alert("Account Number wrong, Please fill correct data !!!"));
     },error=>alert("Something went wrong"));
+    }else{
+      alert("Please enter amount only deposit amount betwen 1 to 50000 !!!");
+    }
    }else{
     alert("Please fill all mandatory field !!");
    }

@@ -67,7 +67,7 @@ export class CustomerWithDrawnComponent implements OnInit {
     console.log("String "+this.withdrawnCustomerForm.value);
   if((this.withdrawnCustomerForm.value.accountId !='' && this.withdrawnCustomerForm.value.accountId != null)&&
     (this.withdrawnCustomerForm.value.balance !='' && this.withdrawnCustomerForm.value.balance != null)){
-    this.accountService.amountDeposit(this.withdrawnCustomerForm.value).subscribe(data=>{
+    if(this.withdrawnCustomerForm.value.balance <=20001 && this.withdrawnCustomerForm.value.balance >0){     this.accountService.amountDeposit(this.withdrawnCustomerForm.value).subscribe(data=>{
       this.transactionData=data;
       console.log(this.transactionData);
       this.transactionService.withdrawnStatement(this.transactionData).subscribe(data=>{
@@ -82,6 +82,9 @@ export class CustomerWithDrawnComponent implements OnInit {
           });
         },error=>alert("Account Number wrong, Please fill correct data !!!"));
     },error=>alert("Something went wrong"));
+    }else{
+     alert("Please enter amount only withdrawn amount betwen 1 to 20000 !!!");
+    }
    }else{
     alert("Please fill all mandatory field !!");
    }
