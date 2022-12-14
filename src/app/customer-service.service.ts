@@ -57,6 +57,11 @@ export class CustomerServiceService {
   return this.httpClient.get<any>('http://localhost:8086/viewAllCustomerById/' + customerId);
  }
 
+ getByUserId(customerId: any) : Observable<any>{
+   alert("getByUserId CustomerID:- "+customerId);
+   return this.httpClient.get<any>('http://localhost:8086/viewAllUserById/' + customerId);
+  }
+
  getByCustomrId(customerId: any) : Observable<any>{
    //alert("getByCustomrId CustomerID:- "+customerId);
    return this.httpClient.get<any>('http://localhost:8086/viewAllCustomerById/' + customerId);
