@@ -39,7 +39,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getDashboard1(customerid: number){
-    alert("test :- "+customerid);
+    //alert("test :- "+customerid);
     this.customerService.getByUserId(customerid).subscribe(data=>{
       this.customersVo=data;
       console.log(this.customersVo.firstname);

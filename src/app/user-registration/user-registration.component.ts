@@ -60,7 +60,7 @@ addRegistered(){
   && (this.registrationForm.value.dateOfBirth !='' && this.registrationForm.value.dateOfBirth != null)
   && (this.registrationForm.value.pan !='' && this.registrationForm.value.pan != null)){
   this.userloginService.userRegistration(this.registrationForm.value).subscribe(data=>{
-    alert("Customer Role :- "+this.registrationForm.value.role)
+   // alert("Customer Role :- "+this.registrationForm.value.role)
     if(this.registrationForm.value.role=='Customer'){
       this.customerService.customerRegistration(this.registrationForm.value).subscribe(data=>{
         this.customerId = data;

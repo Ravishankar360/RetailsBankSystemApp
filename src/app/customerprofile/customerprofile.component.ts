@@ -45,7 +45,7 @@ export class CustomerprofileComponent implements OnInit {
   }
 
   back(customerid: number){
-    alert("back button :- "+customerid)
+   // alert("back button :- "+customerid)
     this.customerService.getByCustomrId(customerid).subscribe(data=>{
       this.customersVo=data;
       console.log(this.customersVo.firstname);
